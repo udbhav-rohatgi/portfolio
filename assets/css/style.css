@@ -523,12 +523,14 @@ html {
     border-radius: 1.5rem;
     padding: 2rem 2rem;
     text-align: left;
+    background-color: #fff;
 }
 
 .curriculum  .curriculum-box h6{
     font-size: 1.25rem;
     line-height: 2rem;
     font-weight: 600;
+    color: #2d2d2d;
 }
 
 .curriculum  .curriculum-box i{
@@ -540,6 +542,9 @@ html {
     color: #999;
     text-align: justify;
 }
+.curriculum  .curriculum-box img{
+    width: 5rem;
+}
 .curriculum  .curriculum-box.one{
     
 }
@@ -550,14 +555,14 @@ html {
 
 }
 .curriculum  .curriculum-box.two{
-    background-color: #75DAB4;
+/*    background-color: #75DAB4;*/
     margin-top: 3rem;
 }
 .curriculum  .curriculum-box.two i{
-    color: #0c0f16;
+    
 }
 .curriculum  .curriculum-box.two p{
-    color: #0c0f16;
+/*    color: #0c0f16;*/
 }
 .curriculum  .curriculum-box.three{
     margin-top: 6rem;
