@@ -91,7 +91,7 @@ html {
 .navbar li {
     list-style-type: none;
     display: inline-block;
-    margin: 5px 2rem;
+    margin: 5px 1rem;
 }
 
 .navbar li > a {
@@ -660,6 +660,10 @@ html {
     border-radius: 50%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+    .curriculum .curriculum-box.three {
+        margin-top: 3rem;
+    }
 
     /*.curriculum .heading h2, .limited .heading h2, .project .heading h2 {
         line-height: 4rem;
