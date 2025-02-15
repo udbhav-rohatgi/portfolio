@@ -605,6 +605,61 @@ html {
 /* *************************************************************** */
 
 
+
+/* *************************************************************** */
+/* project section */
+/* *************************************************************** */
+.certificate{
+    padding: 5rem 0rem;    
+}
+.certificate .heading{
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.certificate .heading p{
+    color: #75DAB4;
+    font-weight: 300;
+    font-size: 1.063rem;
+    text-transform: uppercase;
+    letter-spacing: 14px;
+    margin-bottom: 5px;
+    position: relative;
+}
+.certificate .heading p span{
+    font-size: 9rem;
+    position: absolute;
+    left: 15%;
+    top: -3.125rem;
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 0 0 3px #000000;
+    opacity: 0.15;
+    z-index: -1;
+}
+.certificate .heading h2{
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+.certificate .content{
+    text-align: center;
+    margin-top: 2.5rem;
+}
+.certificate .content img{
+/*    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, .1);*/
+    box-shadow: var(--skill-box-shadow);
+    border-radius: 1.5rem;
+}
+.certificate .content p{
+    ont-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.5rem;
+    padding: 2rem 0rem 1rem;
+}
+/* *************************************************************** */
+
+
 /* footer */
 /* *************************************************************** */
 .udys-footer{
@@ -637,7 +692,7 @@ html {
 
 @media (max-width: 568px) {
     html { font-size: 12px; }
-    .curriculum .heading p, .limited .heading p, .project .heading p, .education .heading p, .books .heading p {
+    .curriculum .heading p, .limited .heading p, .project .heading p, .education .heading p, .books .heading p, .certificate .heading p {
         display: none;
     }
 }
