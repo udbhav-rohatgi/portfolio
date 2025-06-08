@@ -178,7 +178,7 @@ html {
     font-size: 1.5rem;
     margin: 0;
     font-family: 'Barlow Condensed', sans-serif;
-    text-transform: uppercase;
+    text-transform: lowercase;
     letter-spacing: 5px;
 }
 
