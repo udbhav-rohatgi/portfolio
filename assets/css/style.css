@@ -92,20 +92,20 @@ html {
 }
 
 /* Navbar */
-.navbar li {
+.navbar-nav li {
     list-style-type: none;
     display: inline-block;
-    margin: 5px 1rem;
+    margin: 5px 0.5rem;
 }
 
-.navbar li > a {
+.navbar-nav li > a.nav-link {
     color: var(--heading-color);
     text-decoration: none;
     display: inline-block;
     position: relative;
 }
 
-.navbar li > a::after {
+.navbar-nav li > a.nav-link::after {
     content: "";
     display: block;
     margin: auto;
@@ -116,12 +116,13 @@ html {
     transition: all 0.3s;
 }
 
-.navbar li > a:hover::after, li > a.active::after {
+.navbar-nav li > a.nav-link:hover::after, li > a.nav-link.active::after {
     width: 100%;
     background: var(--primary-color);
+
 }
 
-.navbar .dropdown-toggle::after {
+.navbar-nav .dropdown-toggle::after {
      border-top: none; 
      border-right: none; 
      border-bottom: 0; 
@@ -129,7 +130,7 @@ html {
     background: var(--primary-color);
 }
 
-.navbar .portfolio-theme-btn{
+.navbar-nav .portfolio-theme-btn{
     border: none;
   background-color: var(--background-color-invert);
     color: var(--text-color-invert);
@@ -138,6 +139,7 @@ html {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+    box-shadow: var(--skill-box-shadow);
 }
 
 /* Media Queries */
@@ -155,7 +157,7 @@ html {
 
 /* First Section */
 .first-section {
-    padding: 4rem 0rem;
+    padding: 4rem 0rem 0.5rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -195,11 +197,12 @@ html {
 }
 
 .first-section p {
-    font-size: 1.175rem;
-    font-weight: 500;
+    font-size: 1.15rem;
+    font-weight: 400;
     text-align: justify;
-    word-spacing: 5px;
+    word-spacing: 2px;
     color: var(--hero-section-text);
+    width: 90%;
 }
 
 .first-section .icons {
@@ -230,13 +233,14 @@ html {
 .subHero .subHero_Box{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     align-content: center;
-
     box-shadow: var(--skill-box-shadow);
     border-radius: 15px;
     padding: 1.5rem;
-    margin: 1rem;
+}
+.subHero .subHero_Box p{
+    font-size: 0.9rem;
 }
 
 .subHero .subHero_Box .single img {
@@ -254,7 +258,7 @@ html {
 /* skill section */
 /* *************************************************************** */
 .limited{
-    padding: 5rem 0rem 2rem;
+    padding: 2rem 0rem 0rem;
 }
 .limited .heading{
     text-align: center;
@@ -272,7 +276,7 @@ html {
 .limited .heading p span{
     font-size: 9rem;
     position: absolute;
-    left: 30%;
+    left: 34%;
     top: -3.125rem;
     color: #ffffff;
     font-weight: 700;
@@ -294,6 +298,96 @@ html {
     color: var(--text-color);
     line-height: 3.5rem;
 }
+/* *************************************************************** */
+
+/*-------------------------------------------------------------------*/
+/* Education Section */
+/* ################################################################# */
+
+.experience-bg{
+    position: relative;
+    z-index: 0;
+    color: #fff;
+    padding: 5rem 0rem;
+}
+
+.experience-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.55)), 
+                    url("../../assets/images/experience_bg.jpg");
+  background-attachment: fixed; 
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0; 
+  pointer-events: none;
+  z-index: -1;
+}
+
+.experience{
+    position: relative;
+    z-index: 1;
+}
+
+.experience .table>:not(caption)>*>* {
+    color: #fff;
+    background-color: #ffffff00;
+}
+
+.experience .heading{
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.experience .heading p{
+    color: #75DAB4;
+    font-weight: 300;
+    font-size: 1.063rem;
+    text-transform: uppercase;
+    letter-spacing: 14px;
+    margin-bottom: 5px;
+    position: relative;
+}
+.experience .heading p span{
+    font-size: 9rem;
+    position: absolute;
+    left: 21%;
+    top: -3.125rem;
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 0 0 3px #000000;
+    opacity: 0.15;
+    z-index: -1;
+}
+.experience .heading h2{
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.experience .content{
+    text-align: left;
+    margin-top: 3rem;
+}
+.experience .content p{
+    font-size: 1.175rem;
+    font-weight: 500;
+    color: #fff;
+    line-height: 2rem;
+    padding: 1rem 0rem 0rem;
+}
+
+.experience a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.experience a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+
 /* *************************************************************** */
 
 
@@ -366,6 +460,11 @@ html {
     z-index: 1;
 }
 
+.education .table>:not(caption)>*>* {
+    color: #fff;
+    background-color: #ffffff00;
+}
+
 .education .heading{
     text-align: center;
     font-family: 'Barlow Condensed', sans-serif;
@@ -382,7 +481,7 @@ html {
 .education .heading p span{
     font-size: 9rem;
     position: absolute;
-    left: 20%;
+    left: 24%;
     top: -3.125rem;
     color: #ffffff;
     font-weight: 700;
@@ -415,7 +514,7 @@ html {
 /* Skills Section */
 /* ################################################################# */
 .skill{
-    padding: 2rem 0rem 5rem;
+    padding: 0rem 0rem 3rem;
 }
 .skill h2 span{
     display: block;
@@ -431,13 +530,14 @@ html {
     padding: 1rem 2.5rem;
 }
 .skill .subSkill .box {
-    padding: 2rem;
+    padding: 1rem;
     background-color: white;
     box-shadow: var(--skill-box-shadow);
     border-radius: 15px;
+    margin: 0rem 1rem;
 }
 .skill .fimiliar{
-    padding-top: 2.5rem;
+    padding-top: 0.5rem;
 }
 .skill .fimiliar .box {
     padding: 0.5rem;
@@ -497,6 +597,36 @@ html {
 }
 /* *************************************************************** */
 
+.home-page-model .link-line{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.home-page-model .link-line a{
+    text-decoration: none;
+    display: flex;
+}
+
+.home-page-model .link-line a:hover{
+    color: #217fff;
+}
+
+.home-page-model .link-line a p{
+    font-size: 1rem;
+    margin: 0;
+    color: #333;
+}
+
+.home-page-model .link-line a:hover p{
+    color: #217fff;
+}
+
+.home-page-model .link-line a i{
+    font-size: 1.5rem;
+}
+
 
 /* curriculum section */
 /* *************************************************************** */
@@ -520,7 +650,7 @@ html {
 .curriculum .heading p span{
     font-size: 9rem;
     position: absolute;
-    left: 20%;
+    left: 25%;
     top: -3.125rem;
     color: #ffffff;
     font-weight: 700;
@@ -541,7 +671,7 @@ html {
     line-height: 1.5rem;
     padding: 2rem 0rem 1rem;
     font-size: 1.125rem;
-    text-align: justify;
+    text-align: center;
     word-spacing: 5px;
     color: var(--text-color);
 }
@@ -613,7 +743,6 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .curriculum .curriculum-box .link-line a{
@@ -646,7 +775,7 @@ html {
 /* project section */
 /* *************************************************************** */
 .certificate{
-    padding: 5rem 0rem;    
+    padding: 3rem 0rem;    
 }
 .certificate .heading{
     text-align: center;
@@ -664,7 +793,7 @@ html {
 .certificate .heading p span{
     font-size: 9rem;
     position: absolute;
-    left: 10%;
+    left: 16%;
     top: -3.125rem;
     color: #ffffff;
     font-weight: 700;
@@ -695,6 +824,408 @@ html {
 }
 /* *************************************************************** */
 
+.quote{
+    padding: 8rem 0rem;
+    text-align: center;
+}
+
+.quote h1{
+    font-family: "Bonheur Royale", cursive;
+}
+
+
+/* cursive_heading */
+/* *************************************************************** */
+/* *************************************************************** */
+/* *************************************************************** */
+/* *************************************************************** */
+.cursive_heading h2{
+    font-family: "Bonheur Royale", cursive;
+    font-size: 4rem;
+    text-align: center;
+    margin: 2.5rem 0rem 0rem;
+}
+
+
+/* *************************************************************** */
+/* *************************************************************** */
+/* *************************************************************** */
+/* *************************************************************** */
+
+/* Cardinal Section */
+/* *************************************************************** */
+.cardinal{
+    padding: 2rem 0rem;
+}
+/*.cardinal .heading{
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.cardinal .heading p{
+    color: #670404;
+    font-weight: 300;
+    font-size: 1.063rem;
+    text-transform: uppercase;
+    letter-spacing: 14px;
+    margin-bottom: 5px;
+    position: relative;
+}
+.cardinal .heading p span{
+    font-size: 9rem;
+    position: absolute;
+    left: 32%;
+    top: -3.125rem;
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 0 0 3px #000000;
+    opacity: 0.15;
+    z-index: -1;
+}
+.cardinal .heading h2{
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+.cardinal .content{
+    text-align: center;
+}*/
+.cardinal .content p{
+    line-height: 1.5rem;
+    padding: 2rem 0rem 1rem;
+    font-size: 1.125rem;
+    text-align: center;
+    word-spacing: 5px;
+    color: var(--text-color);
+}
+.cardinal{
+    text-align: center;
+}
+.cardinal h3{
+    font-family: 'Barlow Condensed', sans-serif;
+    text-align: center;
+    margin: 2rem 0rem 1rem;
+}
+
+.cardinal .book-box{
+    padding: 0.75rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    color: #2d2d2d;
+    box-shadow: var(--skill-box-shadow);
+}
+
+.cardinal .book-box .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.cardinal .book-box .image img{
+    border-radius: 1rem;
+}
+
+.cardinal .book-box .title{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1rem 0 0;
+}
+
+.cardinal .book-box .author{
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0 0 0.75rem;
+}
+
+.cardinal .book-box .review{
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+/* *************************************************************** */
+
+
+/* Books Page */
+/* *************************************************************** */
+.books{
+    padding: 2rem 0rem;    
+}
+.books .heading{
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.books .heading p{
+    color: #670404;
+    font-weight: 300;
+    font-size: 1.063rem;
+    text-transform: uppercase;
+    letter-spacing: 14px;
+    margin-bottom: 5px;
+    position: relative;
+}
+.books .heading p span{
+    font-size: 9rem;
+    position: absolute;
+    left: 32%;
+    top: -3.125rem;
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 0 0 3px #000000;
+    opacity: 0.15;
+    z-index: -1;
+}
+.books .heading h2{
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+.books .content{
+    text-align: center;
+}
+.books .content p{
+    line-height: 1.5rem;
+    padding: 2rem 0rem 1rem;
+    font-size: 1.125rem;
+    text-align: center;
+    word-spacing: 5px;
+    color: var(--text-color);
+}
+.books h3{
+    font-family: 'Barlow Condensed', sans-serif;
+    text-align: center;
+    margin: 2rem 0rem 1rem;
+}
+
+.books .book-box{
+    padding: 0.75rem;
+    border-radius: 1rem;
+    color: #2d2d2d;
+    background-color: #fff;
+    box-shadow: var(--skill-box-shadow);
+}
+
+.books .book-box .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.books .book-box .image img{
+    border-radius: 1rem;
+    filter: brightness(90%) contrast(90%);
+}
+
+.books .book-box .title{
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1rem 0 0;
+    word-spacing: -2px;
+}
+
+.books .book-box .author{
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 0 0 0.75rem;
+}
+
+.books .book-box .review{
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+/* *************************************************************** */
+
+
+/* Movies Section */
+/* *************************************************************** */
+
+.movies{
+    padding: 2rem 0rem;  
+}
+.movies .heading{
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.movies .heading p{
+    color: #670404;
+    font-weight: 300;
+    font-size: 1.063rem;
+    text-transform: uppercase;
+    letter-spacing: 14px;
+    margin-bottom: 5px;
+    position: relative;
+}
+.movies .heading p span{
+    font-size: 9rem;
+    position: absolute;
+    left: 32%;
+    top: -3.125rem;
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 0 0 3px #000000;
+    opacity: 0.15;
+    z-index: -1;
+}
+.movies .heading h2{
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+.movies .content{
+    text-align: center;
+}
+.movies .content p{
+    line-height: 1.5rem;
+    padding: 2rem 0rem 1rem;
+    font-size: 1.125rem;
+    text-align: center;
+    word-spacing: 5px;
+    color: var(--text-color);
+}
+.movies h3{
+    font-family: 'Barlow Condensed', sans-serif;
+    text-align: center;
+    margin: 2rem 0rem 1rem;
+}
+
+.movies .book-box{
+    padding: 0.75rem;
+    border-radius: 1rem;
+    color: #2d2d2d;
+    box-shadow: var(--skill-box-shadow);
+    background-color: #fff;
+}
+
+.movies .book-box .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.movies .book-box .image img{
+    border-radius: 1rem;
+    filter: brightness(90%) contrast(90%);
+}
+
+.movies .book-box .title{
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1rem 0 0;
+    word-spacing: -4px;
+}
+
+.movies .book-box .author{
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0 0 0.75rem;
+}
+
+.movies .book-box .review{
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+/* *************************************************************** */
+
+
+/* Music Section */
+/* *************************************************************** */
+
+.music{
+    padding: 2rem 0rem;
+}
+.music .heading{
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.music .heading p{
+    color: #670404;
+    font-weight: 300;
+    font-size: 1.063rem;
+    text-transform: uppercase;
+    letter-spacing: 14px;
+    margin-bottom: 5px;
+    position: relative;
+}
+.music .heading p span{
+    font-size: 9rem;
+    position: absolute;
+    left: 32%;
+    top: -3.125rem;
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 0 0 3px #000000;
+    opacity: 0.15;
+    z-index: -1;
+}
+.music .heading h2{
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+.music .content{
+    text-align: center;
+}
+.music .content p{
+    line-height: 1.5rem;
+    padding: 2rem 0rem 1rem;
+    font-size: 1.125rem;
+    text-align: center;
+    word-spacing: 5px;
+    color: var(--text-color);
+}
+.music h3{
+    font-family: 'Barlow Condensed', sans-serif;
+    text-align: center;
+    margin: 2rem 0rem 1rem;
+}
+
+.music .book-box{
+    padding: 0.75rem;
+    border-radius: 1rem;
+    color: #2d2d2d;
+    box-shadow: var(--skill-box-shadow);
+    background-color: #fff;
+}
+
+.music .book-box .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.music .book-box .image img{
+    border-radius: 1rem;
+    filter: brightness(90%) contrast(90%);
+}
+
+.music .book-box .title{
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1rem 0 0;
+    word-spacing: -4px;
+}
+
+.music .book-box .author{
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 0 0 0.75rem;
+}
+
+.music .book-box .review{
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+/* *************************************************************** */
+
 
 /* footer */
 /* *************************************************************** */
@@ -709,6 +1240,19 @@ html {
 }
 /* *************************************************************** */
 
+@media (max-width: 1200px) {
+    html { font-size: 12px; }
+    .experience .heading p span {
+        left: 19%;
+    }
+    .certificate .heading p span {
+        left: 14%;
+    }
+    .education .heading p span {
+        left: 21%;
+    }
+}
+
 @media (max-width: 995px) {
     html { font-size: 12px; }
 }
@@ -717,18 +1261,30 @@ html {
 
     html { font-size: 12px; }
 
+    .experience .heading p span {
+        left: 10%;
+    }
+    .certificate .heading p span {
+        left: 4%;
+    }
+    .education .heading p span, .curriculum .heading p span {
+        left: 14%;
+    }
+    .curriculum .curriculum-box.two, .curriculum .curriculum-box.three {
+        margin-top: 1rem;
+    }
 }
 
 @media only screen and (min-width: 768px) {
-  .dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0;
-  }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
 }
 
 @media (max-width: 568px) {
     html { font-size: 12px; }
-    .curriculum .heading p, .limited .heading p, .project .heading p, .education .heading p, .books .heading p, .certificate .heading p {
+    .curriculum .heading p, .limited .heading p, .project .heading p, .education .heading p, .books .heading p, .certificate .heading p, .experience .heading p {
         display: none;
     }
 }
@@ -747,20 +1303,30 @@ html {
     }
 
     .first-section img {
-    border: 4px solid #38dda5;
-    box-shadow: var(--skill-box-shadow);
-    border-radius: 50%;
-}
+        border: 4px solid #38dda5;
+        box-shadow: var(--skill-box-shadow);
+        border-radius: 50%;
+    }
 
+    .first-section p{
+        width: 100%;
+    }
     .curriculum .curriculum-box.three {
-        margin-top: 3rem;
+        margin-top: 1rem;
     }
 
     .skill .subSkill .box {
         padding: 1rem;
+        margin: 0;
     }
 
     .curriculum .heading h2, .limited .heading h2, .project .heading h2, .education .heading h2, .certificate .heading h2, .limited .heading h2{
         font-size: 3rem;
+    }
+    .cursive_heading h2 {
+        font-size: 3rem;
+    }
+    .skill .fimiliar .box {
+        padding: 0.5rem;
     }
 }
